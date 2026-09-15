@@ -163,7 +163,6 @@ leaf photo ─► leaf gate ──► not a leaf? ─► friendly refusal (no di
 * **Decoding:** center-crop + mirror TTA, chosen by measuring four decodings on the field split.
 * **Gate:** MobileNetV3-small embeddings + logistic regression (AUC 0.998), so a chair or a
   screenshot is refused instead of diagnosed.
-* Full write-up: `docs/architecture.md`.
 
 ### Known limitations (honest)
 
@@ -185,9 +184,9 @@ leaf photo ─► leaf gate ──► not a leaf? ─► friendly refusal (no di
 
 ## 6. Demo video and deployed app
 
-* **Demo video:** _〈https://drive.google.com/file/d/19Us3zN2I6sN1txOf_xZB1OPdydAFy3Qr/view?usp=drivesdk〉
+* **Demo video:** _〈https://drive.google.com/file/d/19Us3zN2I6sN1txOf_xZB1OPdydAFy3Qr/view?usp=drivesdk 〉
   
-* **Deployed app:** _〈https://animated-space-adventure-wrwg7jp44qj939469-8000.app.github.dev/〉_
+* **Deployed app:** _〈https://animated-space-adventure-wrwg7jp44qj939469-8000.app.github.dev/ 〉_
 * may work on some devices only. If not working, you have to change your DNS Probe.
 
 ---
