@@ -1,11 +1,8 @@
 # 🌿 AgriSmart AI — Crop Disease Detection & Farm Decision Support
 
-**SIH-2026 Internal Hackathon · L. J. Institute of Engineering & Technology · Team C-433**
-
 Upload a photo of a leaf → get the disease, the confidence, and what to do about it — in
 **English, हिंदी or ગુજરાતી**, with weather-aware irrigation, a crop recommendation and a
-grounded farmer assistant. If the photo is **not a leaf**, the app says so instead of
-inventing a disease.
+grounded farmer assistant.
 
 ![dashboard](docs/ui/dashboard.png)
 
@@ -30,9 +27,6 @@ origin, no CORS, no second deployment. PyTorch (CPU) for inference.
 ---
 
 ## 2. Setup and run — reproduce a prediction in under 10 minutes
-
-The trained weights (`model/best_model.pth`, 44 MB) and the **pre-built** web UI
-(`app/backend/static`) are committed, so nothing needs training or building to run.
 
 ```bash
 # 1) install (CPU wheels: ~200 MB instead of ~2 GB)
@@ -94,7 +88,7 @@ works offline, and the UI says so (`Weather: offline`) rather than failing.
 
 | Dataset | Used for | Source | Licence / note |
 |---|---|---|---|
-| **PlantVillage** (38-class photo dataset, 54,303 images) | **Core** lab training and the in-domain validation split | Kaggle `vipoooool/new-plant-diseases-dataset` (needs a Kaggle account); mirrored on Hugging Face as `dpdl-benchmark/plant_village`, which is what the scripts fetch | Public research dataset (PlantVillage, Penn State); the Kaggle copy is a re-augmented version of the original |
+| **PlantVillage** (38-class photo dataset, 54,303 images) | **Core** lab training and the in-domain validation split | Kaggle `vipoooool/new-plant-diseases-dataset` ; mirrored on Hugging Face as `dpdl-benchmark/plant_village`, which is what the scripts fetch | Public research dataset (PlantVillage, Penn State); the Kaggle copy is a re-augmented version of the original |
 | **PlantDoc** (field photos, real backgrounds/lighting) | **Domain adaptation + field evaluation**; its test and hold-out splits were **never trained on** | `github.com/pratikkayal/PlantDoc-Dataset` | MIT licence (see the repository); 
 | **Caltech-101** | Negatives for the "is this even a leaf?" gate | `data.caltech.edu` via torchvision | Public research dataset |
 | **Crop-Recommendation** (2,200 rows, 22 crops) | Bonus crop recommender | Kaggle `atharvaingle/crop-recommendation-dataset` | CC0 |
@@ -187,13 +181,14 @@ leaf photo ─► leaf gate ──► not a leaf? ─► friendly refusal (no di
 6. **Weather needs internet**; without it the app falls back to manual soil readings and
    says so on screen.
 
----
+--- 
 
 ## 6. Demo video and deployed app
 
-* **Demo video (7.4):** _〈paste your video link here〉_ — e.g. `https://youtu.be/xxxxxxxx`
-  (recording script: `docs/demo_script.md`)
-* **Deployed app:** _〈paste your hosted URL here, or write "run locally with ./run.sh"〉_
+* **Demo video:** _〈https://drive.google.com/file/d/19Us3zN2I6sN1txOf_xZB1OPdydAFy3Qr/view?usp=drivesdk〉
+  
+* **Deployed app:** _〈https://animated-space-adventure-wrwg7jp44qj939469-8000.app.github.dev/〉_
+* may work on some devices only. If not working, you have to change your DNS Probe.
 
 ---
 
