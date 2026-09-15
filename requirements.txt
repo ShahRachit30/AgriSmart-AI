@@ -1,0 +1,37 @@
+# AgriSmart AI - runtime + training dependencies
+# CPU-only machines: install torch/torchvision from the CPU wheel index first
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+# then
+#   pip install -r requirements.txt
+
+# --- web API ---
+fastapi>=0.115
+uvicorn[standard]>=0.32
+python-multipart>=0.0.12
+pydantic>=2.9
+
+# --- ML ---
+# torch is installed from the CPU wheel index first (see README); >=2.4 works on CPU and CUDA.
+torch>=2.4
+torchvision>=0.19
+# Pinned to the version that produced model/crop_model.joblib + crop_label_encoder.joblib:
+# a newer scikit-learn warns "InconsistentVersionWarning" when unpickling and may
+# change the scores. Re-pin only together with model/crop_train.py.
+scikit-learn==1.6.1
+joblib>=1.4
+numpy>=1.26
+pandas>=2.2
+
+# --- data + imaging ---
+pyarrow>=17.0          # PlantVillage parquet shards
+pillow>=10.4
+pillow-heif>=0.18      # iPhone HEIC/HEIF photos (optional: /api/health reports heif=false without it)
+requests>=2.32         # Open-Meteo + dataset download
+
+# --- reporting ---
+matplotlib>=3.9
+reportlab>=4.2
+
+# --- tests ---
+pytest>=8.3
+httpx>=0.27            # FastAPI TestClient

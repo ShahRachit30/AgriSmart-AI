@@ -1,0 +1,31 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- datasets (reproducible: scripts/download_datasets.py) ---
+data/raw/
+data/tmp/
+data/splits/
+!data/.gitkeep
+
+# --- frontend ---
+app/frontend/node_modules/
+app/frontend/dist/
+# the built bundle IS committed so a judge can run the app with one command:
+!app/backend/static/
+
+# --- misc ---
+.DS_Store
+*.log
+report/train_stdout.log
+.ipynb_checkpoints/
+.env
+.env.*
+# the template is safe to commit (it holds no secrets):
+!.env.example

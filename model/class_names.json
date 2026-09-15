@@ -1,0 +1,22 @@
+{
+  "order": [
+    "apple_black_rot",
+    "apple_healthy",
+    "apple_scab",
+    "bell_pepper_bacterial_spot",
+    "bell_pepper_healthy",
+    "corn_common_rust",
+    "corn_grey_leaf_spot",
+    "corn_healthy",
+    "grape_black_rot",
+    "grape_healthy",
+    "potato_early_blight",
+    "potato_healthy",
+    "potato_late_blight",
+    "tomato_bacterial_spot",
+    "tomato_early_blight",
+    "tomato_healthy",
+    "tomato_late_blight",
+    "tomato_leaf_mold"
+  ]
+}

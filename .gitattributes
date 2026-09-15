@@ -1,0 +1,23 @@
+# Line endings: keep the code portable when the repo is cloned on Windows.
+# Without this, `core.autocrlf=true` (the Windows default) rewrites *.sh with CRLF
+# and bash refuses to run it: "./run.sh: /bin/bash^M: bad interpreter".
+* text=auto eol=lf
+
+*.sh   text eol=lf
+*.ps1  text eol=crlf
+*.bat  text eol=crlf
+
+# Binary artefacts - never diff, never convert.
+*.pth     binary
+*.joblib  binary
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.pdf     binary
+*.zip     binary
+*.parquet binary
+
+# Keep the built UI and the demo photos out of GitHub's language statistics.
+app/backend/static/** linguist-generated=true
+samples/**             linguist-vendored=true
+report/predictions.json linguist-generated=true
